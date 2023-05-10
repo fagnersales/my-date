@@ -1,5 +1,6 @@
 import { difference, isAfter, isBefore, isBetween } from '../lib/compare'
 import { format } from '../lib/format'
+import { fromRelativeString, fromString } from '../lib/from-string'
 import { now } from '../lib/now'
 
 process.env.TZ = 'UTC'
@@ -31,5 +32,20 @@ const d2 = isBetween(now(), now().addHours(1), now().addHours(2))
 console.log('isBetween =>', d1, d2)
 
 // FORMAT
+const f1 = format(now(), 'M/D/YYYY [at] hh:mm A')
 
-console.log('M/D/YYYY at hh:mm a =>', format(now(), 'M/D/YYYY [at] hh:mm A'))
+console.log('M/D/YYYY at hh:mm a =>', f1)
+
+// FROM
+
+const fs1 = fromString('5/10/2023 at 7:55 am')
+
+console.log('fromString         =>', fs1)
+
+const frs1 = fromRelativeString('today at 7:55 am', 'America/Sao_Paulo')
+const frs2 = fromRelativeString('tomorrow at 7:55 am', 'America/Sao_Paulo')
+const frs3 = fromRelativeString('7:55 am', 'America/Sao_Paulo')
+
+console.log('fromRelativeString =>', frs1)
+console.log('fromRelativeString =>', frs2)
+console.log('fromRelativeString =>', frs3)
