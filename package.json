@@ -1,5 +1,5 @@
 {
-  "name": "my-date",
+  "name": "@fagnersalesdev/my-date",
   "version": "0.0.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "",
+  "author": "Fagner Sales",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.1.1",
@@ -20,5 +20,18 @@
   },
   "dependencies": {
     "dayjs": "^1.11.7"
-  }
+  },
+  "description": "Hello! ���",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fagnersales/my-date.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fagnersales/my-date/issues"
+  },
+  "homepage": "https://github.com/fagnersales/my-date#readme"
 }
