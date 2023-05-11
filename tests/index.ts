@@ -2,6 +2,7 @@ import { difference, isAfter, isBefore, isBetween } from '../lib/compare'
 import { format } from '../lib/format'
 import { fromRelativeString, fromString } from '../lib/from-string'
 import { now } from '../lib/now'
+import { toTimezone } from '../lib/toTimezone'
 
 process.env.TZ = 'UTC'
 
@@ -49,3 +50,11 @@ const frs3 = fromRelativeString('7:55 am', 'America/Sao_Paulo')
 console.log('fromRelativeString =>', frs1)
 console.log('fromRelativeString =>', frs2)
 console.log('fromRelativeString =>', frs3)
+
+// TO TIMEZONE
+
+const tt1 = toTimezone(now('America/Sao_Paulo'), 'America/New_York')
+const tt2 = toTimezone(now('UTC'), 'America/New_York')
+
+console.log('From America/Sao_Paulo to UTC =>', tt1)
+console.log('From UTC to America/New_York  =>', tt2)
