@@ -13,3 +13,5 @@ import { now } from '@fagnersales21/my-date'
 
 console.log(now('UTC').toDateString())
 ```
+
+// TODO: clone dayjs.to
