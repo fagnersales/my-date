@@ -1,3 +1,4 @@
+import { addHours } from '../lib/add'
 import { difference, isAfter, isBefore, isBetween } from '../lib/compare'
 import { format } from '../lib/format'
 import { fromRelativeString, fromString } from '../lib/from-string'
@@ -12,23 +13,23 @@ console.log('New York  =>', now('America/New_York'))
 console.log('Sao Paulo =>', now('America/Sao_Paulo'))
 
 // COMPARE
-const a1 = isAfter(now(), now().addHours(3))
-const a2 = isAfter(now().addHours(3), now())
+const a1 = isAfter(now(), addHours(now(), 3))
+const a2 = isAfter(addHours(now(), 3), now())
 
 console.log('isAfter =>', a1, a2)
 
-const b1 = isBefore(now(), now().addHours(3))
-const b2 = isBefore(now().addHours(3), now())
+const b1 = isBefore(now(), addHours(now(), 3))
+const b2 = isBefore(addHours(now(), 3), now())
 
 console.log('isBefore =>', b1, b2)
 
-const c1 = difference(now(), now().addHours(3))
-const c2 = difference(now().addHours(3), now())
+const c1 = difference(now(), addHours(now(), 3))
+const c2 = difference(addHours(now(), 3), now())
 
 console.log('difference =>', c1, c2)
 
-const d1 = isBetween(now(), now().addHours(-1), now().addHours(2))
-const d2 = isBetween(now(), now().addHours(1), now().addHours(2))
+const d1 = isBetween(now(), addHours(now(), -1), addHours(now(), 2))
+const d2 = isBetween(now(), addHours(now(), 1), addHours(now(), 2))
 
 console.log('isBetween =>', d1, d2)
 
