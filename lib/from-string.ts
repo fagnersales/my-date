@@ -1,4 +1,5 @@
 import { MyDate } from '../lib/structures/MyDate'
+import { addDays } from './add'
 import { now } from './now'
 import { Timezone } from './timezone'
 import dayjs from 'dayjs'
@@ -47,7 +48,7 @@ export const fromRelativeString = (input: string, timezone: Timezone) => {
   }
 
   if (input.startsWith('tomorrow at')) {
-    const today = now(timezone).addDays(1)
+    const today = addDays(now(timezone), 1)
     const newInput = input.replace('tomorrow at', `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()} at`)
 
     return fromString(newInput)
