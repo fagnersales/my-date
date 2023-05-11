@@ -21,7 +21,7 @@
   "dependencies": {
     "dayjs": "^1.11.7"
   },
-  "description": "Hello! ���",
+  "description": "A simple package for handling dates with useful methods, such as: `toTimezone`, `difference`, `isBefore`, `isAfter`, etc.",
   "directories": {
     "lib": "lib",
     "test": "tests"
